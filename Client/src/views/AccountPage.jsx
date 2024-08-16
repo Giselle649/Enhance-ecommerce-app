@@ -23,7 +23,7 @@ let navigate = useNavigate()
           const token = localStorage.getItem('access_token');
             setLoading(true)
             //clg dulu data, dan liat di console browser, bukan liat di postman
-            const {data} = await axios.get(`http://localhost:3000/user`, {headers: {
+            const {data} = await axios.get("http://3.25.165.74" + "/user", {headers: {
                 Authorization: `Bearer ${token}`,
             }})
             setEachProduct({email: data.email, address: data.address, fullName:data.fullName, mobileNumber: data.mobileNumber, password: data.password})
@@ -51,7 +51,7 @@ let navigate = useNavigate()
       setLoading(true)
      
    
-        await axios.put(`http://localhost:3000/user`, eachProduct, {headers: {
+        await axios.put("http://3.25.165.74" + "/user", eachProduct, {headers: {
               Authorization: `Bearer ${token}`,
             }})
    

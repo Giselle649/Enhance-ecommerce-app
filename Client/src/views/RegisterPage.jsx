@@ -41,7 +41,7 @@ const RegisterPage = () => {
       // POST /login
       // JSON { email, password }
       const token = localStorage.getItem('access_token');
-      await axios.post('http://localhost:3000/register', {
+      await axios.post("http://3.25.165.74" + "/register", {
         fullName,
         email,
         password,

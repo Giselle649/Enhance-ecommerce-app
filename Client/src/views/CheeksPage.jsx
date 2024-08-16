@@ -24,7 +24,7 @@ const CheeksPage = () => {
             setLoading(true)
             const token = localStorage.getItem('access_token');
             //clg dulu data, dan liat di console browser, bukan liat di postman
-            const {data} = await axios.get('http://localhost:3000/productByCategoryId/4', {headers: {
+            const {data} = await axios.get("http://3.25.165.74" + "/productByCategoryId/4", {headers: {
                 Authorization: `Bearer ${token}`,
               }})
             setAllProducts(data)

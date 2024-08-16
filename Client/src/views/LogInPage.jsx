@@ -15,7 +15,7 @@ const LogInPage = ({url}) => {
     try{
       console.log(codeResponse);
       const {data} = await axios.post(
-        `http://localhost:3000/google-login`, null, {headers: {token: codeResponse.credential}}
+        "http://3.25.165.74" + "/google-login", null, {headers: {token: codeResponse.credential}}
       )
  
       localStorage.setItem("access_token", data)
@@ -42,7 +42,7 @@ const LogInPage = ({url}) => {
       // Kirim ke backend
       // POST /login
       // JSON { email, password }
-      const response = await axios.post('http://localhost:3000/login', {
+      const response = await axios.post("http://3.25.165.74" + "/login", {
         email,
         password,
       });
