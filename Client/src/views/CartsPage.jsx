@@ -20,7 +20,7 @@ const CartsPage = () => {
             setLoading(true)
             const token = localStorage.getItem('access_token');
             //clg dulu data, dan liat di console browser, bukan liat di postman
-            const {data} = await axios.get("3.25.165.74" + "/cart", {headers: {
+            const {data} = await axios.get("https://enhanceserver.gisellesamanthawong.online" + "/cart", {headers: {
                 Authorization: `Bearer ${token}`,
               }})
             
@@ -46,7 +46,7 @@ const CartsPage = () => {
             //clg dulu data, dan liat di console browser, bukan liat di postman
         
 
-              const response = await axios.get("3.25.165.74" + "/user", {headers: {
+              const response = await axios.get("https://enhanceserver.gisellesamanthawong.online" + "/user", {headers: {
                 Authorization: `Bearer ${token}`,
             }})
             console.log(response.data.address)
@@ -92,7 +92,7 @@ const deleteButtonHandler = async (e, productId) => {
         setLoading(true)
         const token = localStorage.getItem('access_token');
         //clg dulu data, dan liat di console browser, bukan liat di postman
-        await axios.delete("3.25.165.74" + `cart/${productId}`, {headers: {
+        await axios.delete("https://enhanceserver.gisellesamanthawong.online" + `cart/${productId}`, {headers: {
             Authorization: `Bearer ${token}`,
           }})
           fetchData();
@@ -112,17 +112,17 @@ const formSubmitHandler = async (e, productId) => {
         const token = localStorage.getItem('access_token');
         let data = {isPaid: false, address: address}
         //clg dulu data, dan liat di console browser, bukan liat di postman
-        await axios.post("3.25.165.74" + "/transaction", data, {headers: {
+        await axios.post("https://enhanceserver.gisellesamanthawong.online" + "/transaction", data, {headers: {
             Authorization: `Bearer ${token}`,
           }})
 
-        let response = await axios.post("3.25.165.74" + "/generate-midtrans-token", {realTotal: realTotal}, {headers: {
+        let response = await axios.post("https://enhanceserver.gisellesamanthawong.online" + "/generate-midtrans-token", {realTotal: realTotal}, {headers: {
           Authorization: `Bearer ${token}`,
         }})
         window.location.href =response.data.redirect_url
 
         
-        await axios.delete("3.25.165.74" + "/cart", {headers: {
+        await axios.delete("https://enhanceserver.gisellesamanthawong.online" + "/cart", {headers: {
           Authorization: `Bearer ${token}`,
         }})
     

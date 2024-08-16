@@ -41,7 +41,7 @@ const RegisterPage = () => {
       // POST /login
       // JSON { email, password }
       const token = localStorage.getItem('access_token');
-      await axios.post("3.25.165.74" + "/register", {
+      await axios.post("https://enhanceserver.gisellesamanthawong.online" + "/register", {
         fullName,
         email,
         password,
