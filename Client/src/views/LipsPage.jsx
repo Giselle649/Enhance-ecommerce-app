@@ -24,7 +24,7 @@ const LipsPage = () => {
             setLoading(true)
             const token = localStorage.getItem('access_token');
             //clg dulu data, dan liat di console browser, bukan liat di postman
-            const {data} = await axios.get("http://3.25.165.74" + "/productByCategoryId/3", {headers: {
+            const {data} = await axios.get("https://3.25.165.74" + "/productByCategoryId/3", {headers: {
                 Authorization: `Bearer ${token}`,
               }})
             setAllProducts(data)

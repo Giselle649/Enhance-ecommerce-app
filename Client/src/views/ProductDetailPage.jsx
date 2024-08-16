@@ -16,7 +16,7 @@ const ProductDetailPage = () => {
     const fetchData = async () => {
         try {
             setLoading(true)
-            const {data} = await axios.get("http://3.25.165.74" + `/productByProductId/${id}`)
+            const {data} = await axios.get("https://3.25.165.74" + `/productByProductId/${id}`)
             //console.log(data, '19');
             //console.log(data.product, '20');
             setProducts(data)
@@ -54,7 +54,7 @@ const ProductDetailPage = () => {
         
          
 
-        await axios.post("http://3.25.165.74" + `cart/${id}`, {productQuantity: productQuantity}, {headers: {
+        await axios.post("https://3.25.165.74" + `cart/${id}`, {productQuantity: productQuantity}, {headers: {
                   Authorization: `Bearer ${token}`}})
     
         
