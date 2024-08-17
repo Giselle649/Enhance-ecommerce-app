@@ -54,7 +54,7 @@ const ProductDetailPage = () => {
         
          
 
-        await axios.post("https://enhanceserver.gisellesamanthawong.online" + `cart/${id}`, {productQuantity: productQuantity}, {headers: {
+        await axios.post("https://enhanceserver.gisellesamanthawong.online" + `/cart/${id}`, {productQuantity: productQuantity}, {headers: {
                   Authorization: `Bearer ${token}`}})
     
         

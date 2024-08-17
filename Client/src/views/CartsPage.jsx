@@ -92,7 +92,7 @@ const deleteButtonHandler = async (e, productId) => {
         setLoading(true)
         const token = localStorage.getItem('access_token');
         //clg dulu data, dan liat di console browser, bukan liat di postman
-        await axios.delete("https://enhanceserver.gisellesamanthawong.online" + `cart/${productId}`, {headers: {
+        await axios.delete("https://enhanceserver.gisellesamanthawong.online" + `/cart/${productId}`, {headers: {
             Authorization: `Bearer ${token}`,
           }})
           fetchData();
@@ -140,7 +140,7 @@ const formSubmitHandler = async (e, productId) => {
 
 
   if(loading) return <p>Loading...</p>
-  if(error) return <p>Try adding a product to the cart!</p>
+  if(error) <p>Try adding a product to the cart!</p>
 
 
 
